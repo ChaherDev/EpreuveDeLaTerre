@@ -1,7 +1,5 @@
 // Divisions
 
-// le premier nombre doit etre entier et le second inférieur au premier et différent de zéro
-
 func division() {
     let result = Int(CommandLine.arguments[1])! / Int(CommandLine.arguments[2])!
     let remainder = Int(CommandLine.arguments[1])! % Int(CommandLine.arguments[2])!

@@ -1,7 +1,5 @@
 // Taille du'une chaine
 
-// il faut que les nombres renvoient une erreur
-
 func size() {
     let array = Array(CommandLine.arguments[1])
     print(array.count)

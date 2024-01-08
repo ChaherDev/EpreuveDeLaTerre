@@ -8,7 +8,7 @@ func formatChecker(_ userInput: String) -> Bool {
     } 
 
     let digits = "123456789"
-    for i in [0, 1, 2, 3, 4] {
+    for i in [0, 1, 3, 4] {
         if !digits.contains(characters[i]) {
             return false
         }
@@ -24,8 +24,17 @@ func formatChecker(_ userInput: String) -> Bool {
     }
 }
 
-func hoursConvertor() {
-    print("Bien vu")
+func hoursConvertor(_ time: String) {
+    let hourString = String(time.prefix(2))
+    let minuteString = String(time.suffix(2))
+
+    let hour = Int(hourString)!
+    let minute = Int(minuteString)!
+    var convertedHour = hour % 12
+    convertedHour = convertedHour == 0 ? 12 : convertedHour
+    let suffix = hour >= 12 ? "PM" : "AM"
+
+    print("\(convertedHour):\(minute < 10 ? "0" : "")\(minute)\(suffix)")
 }
 
 if CommandLine.arguments.count != 2 {
@@ -33,5 +42,5 @@ if CommandLine.arguments.count != 2 {
 } else if !formatChecker(CommandLine.arguments[1]) {
     print("Votre argument doit être une heure valide sous la forme : 13:45")
 } else {
-    hoursConvertor()
+    hoursConvertor(CommandLine.arguments[1])
 }

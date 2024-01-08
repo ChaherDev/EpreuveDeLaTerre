@@ -1,11 +1,12 @@
 // 24 to 12
 
 func formatChecker(_ userInput: String) -> Bool {
+
     let characters = Array(userInput)
-    if userInput.count != 5 || userInput[2] != ":" {
+    if userInput.count != 5 || characters[2] != ":" {
         return false
     } 
-    
+
     let digits = "123456789"
     for i in [0, 1, 2, 3, 4] {
         if !digits.contains(characters[i]) {
@@ -27,10 +28,10 @@ func hoursConvertor() {
     print("Bien vu")
 }
 
-if CommandLine.arguments != 2 {
+if CommandLine.arguments.count != 2 {
     print("Vous devez fournir un seul argument")
 } else if !formatChecker(CommandLine.arguments[1]) {
-    print("Votre argument doit être de la forme : 13:45")
+    print("Votre argument doit être une heure valide sous la forme : 13:45")
 } else {
     hoursConvertor()
 }

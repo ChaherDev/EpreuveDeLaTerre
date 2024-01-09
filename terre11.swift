@@ -19,9 +19,9 @@ func formatChecker(_ userInput: String) -> Bool {
 
     if let hour = Int(hourString), let minute = Int(minuteString) {
         return hour >= 0 && hour < 24 && minute >= 0 && minute < 60
-    } else {
-        return false
     }
+
+    return false
 }
 
 func hoursConvertor(_ time: String) {

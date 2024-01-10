@@ -7,7 +7,7 @@ func formatChecker(_ userInput: String) -> Bool {
         return false
     } 
 
-    let digits = "123456789"
+    let digits = "0123456789"
     for i in [0, 1, 3, 4] {
         if !digits.contains(characters[i]) {
             return false
